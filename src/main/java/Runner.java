@@ -52,11 +52,7 @@ public class Runner {
         }
 
         System.out.println(questions.size());
-/*
-        Scanner reader = new Scanner(System.in);  // Reading from System.in
-        System.out.println("Enter the number of Applicants! ");
-        int n = reader.nextInt(); // Scans the next token of the input as an int.
-*/
+
         int numApps = 0;
         while (true) {
             Row row = sheet.getRow(numApps);

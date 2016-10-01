@@ -5,17 +5,12 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
-
 import java.io.FileOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-
 import org.apache.poi.xwpf.usermodel.XWPFRun;
-
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -24,26 +19,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import sun.awt.image.ImageWatched;
 
-
-
-
 public class Runner {
-
 
     public static void main(String[] args) throws IOException {
 
         LinkedList<Question> questions = new LinkedList<Question>();
 
-        String excelFilePath = "/Users/Bob/Desktop/app.xlsx";
+        String excelFilePath = "/Users/Bob/Desktop/app.xlsx"; // Input file path
         FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
         Workbook workbook = new XSSFWorkbook(inputStream);
         Sheet sheet = workbook.getSheet("Sheet1");
 
         Row listOfQuestions = sheet.getRow(0);
-
-
-        // creates the list of questions
 
         for (Cell cell : listOfQuestions) {
             Question q = new Question();
@@ -78,8 +66,6 @@ public class Runner {
             }
         }
 
-
-
         for (int i = 1; i < numApps; i++) {
 
             Row row = sheet.getRow(i);
@@ -113,8 +99,6 @@ public class Runner {
                             Question tempQ = new Question();
                             tempQ.setQuestion(temp.get(index).getQuestion());
 
-
-
                             if(cell.getCellType() == cell.CELL_TYPE_STRING) {
                                 tempQ.setResponse(cell.getStringCellValue());
                             } else if (cell.getCellType() == cell.CELL_TYPE_NUMERIC) {
@@ -128,43 +112,16 @@ public class Runner {
                     }
                 }
 
-
                 try {
-                    createDoc(applicant, i);
+                    createDoc(applicant);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
             }
-
-
-
         }
-
-
-
-    System.out.println("Total number of applicants: " + (numApps - 2)); // minus one for row with question titles.
-
-
-
-
     }
 
-
-
-    public static void createDoc (Applicant a, int count) throws Exception {
-/*
-        System.out.println("At this point");
-        for (Applicant a : applicants) {
-            List<Question> print = a.getQuestions();
-            for (Question q : print) {
-                System.out.println(q.getQuestion());
-                System.out.println(q.getResponse());
-            }
-        }
-*/
-
+    public static void createDoc (Applicant a) throws Exception {
 
             final int nameColumn = 1;
 
@@ -184,20 +141,10 @@ public class Runner {
                 XWPFRun tempText = temp.createRun();
                 tempText.setText(a.getQuestions().get(i).getResponse());
                 tempText.addBreak();
-
             }
-
-
-
-
 
             document.write(out);
             out.close();
             System.out.println(name + " written successfully");
-
         }
-
-
-
-
 }

@@ -4,12 +4,10 @@
 public class Question {
     private String question;
     private String response;
-    private int column;
 
     public Question () {
         this.question = "";
         this.response = "";
-        this.column = 0;
     }
 
     public String getResponse() {
@@ -22,14 +20,6 @@ public class Question {
 
     public String getQuestion() {
         return question;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
     }
 
     public void setQuestion(String question) {

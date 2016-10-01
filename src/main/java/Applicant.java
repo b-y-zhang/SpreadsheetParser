@@ -7,7 +7,6 @@ import java.util.List;
 public class Applicant {
     List<Question> questions;
 
-
     public Applicant () {
         this.questions = new LinkedList<Question>();
     }

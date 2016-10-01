@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/osgi/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/osgi/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/contrib/poi-ruby/java" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/examples/src" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/excelant/java" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/excelant/testcases" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/integrationtest" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/java" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/ooxml/java" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/ooxml/testcases" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/scratchpad/src" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/scratchpad/testcases" />
+      <root url="file://$PROJECT_DIR$/../../poi-3.14/src/testcases" />
+    </SOURCES>
+  </library>
+</component>

@@ -125,7 +125,7 @@ public class Runner {
 
             final int nameColumn = 1;
 
-            String name = a.getQuestions().get(nameColumn).getResponse() + " " + a.getQuestions().get(2).getResponse();
+            String name = a.getQuestions().get(nameColumn).getResponse() + " " + a.getQuestions().get(nameColumn + 1).getResponse();
 
             XWPFDocument document = new XWPFDocument();
             FileOutputStream out = new FileOutputStream(new File ("/Users/Bob/Desktop/Results/" + name + ".docx"));
